@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Задание 1
+Создать объект, описывающий автомобиль (производитель, модель, год выпуска, средняя скорость), и следующие функции для
+работы с этим объектом.
+1. Функция для вывода на экран информации об автомобиле.
+2. Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью.
+Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час. -->
+
+<!-- <script>
+    let car = {
+        manufacturer: "Ford",
+        model: "Focus",
+        year_of_issue: 2018,
+        average_speed_kmh: 130
+    };
+
+    // Функция для вывода на экран информации об автомобиле.
+
+    function info(){
+        for(var tempProperty in car){
+        // отображаем название свойства
+            document.write(tempProperty + " - ");
+        // значение свойства
+            document.write(car[tempProperty] + "<br>");
+        }
+    }
+    info()
+
+    // Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью.
+    setTimeout(
+        function trevelTime(){
+            let distance = prompt ("введите расстояние, которое необходимо преодолеть, чтобы узнать время в пути");
+            let time = distance / car.average_speed_kmh;
+            let travel_time = Math.floor ( time + Math.floor( time / 4 ));
+            alert("время в пути при движении со средней скоростью " + car.average_speed_kmh + " : " + travel_time + " часов");
+        },200
+    );
+    
+</script> -->
+
+<!-- Создать объект, хранящий в себе отдельно числитель и знаменатель дроби, и следующие функции для работы с этим объектом.
+1. Функция сложения 2-х объектов-дробей.
+2. Функция вычитания 2-х объектов-дробей.
+3. Функция умножения 2-х объектов-дробей.
+4. Функция деления 2-х объектов-дробей.
+5. Функция сокращения объекта-дроби. -->
+
+<!-- <script>
+    function Fraction ( numerator, denominator){
+        this.numerator = numerator;
+        this.denominator = denominator;
+
+    //вывод введенного числа
+        this.fract = function(){
+            document.write("ваша дробь " + this.numerator + "/" + this.denominator + "<br>")
+        }
+    //сокращение дроби   
+        this.reduction = function(){                /*Для сокращения дроби находим НОД через алгоритм Евклида */
+            let del1 = this.numerator;
+            let del2 = this.denominator;
+                while (del1!=0 && del2!=0){
+                    if(del1>del2){del1=del1%del2}
+                    else{del2=del2%del1}};
+            let nod = del1 + del2;   
+            document.write( "сокращение дроби " + this.numerator / nod + "/" + this.denominator / nod + "<br>" );
+        }}
+    //сумма 2 дробей
+        function summa(){
+            let sumNumerator;
+            let sumDenominator;
+            del1 = sumNumerator;
+            del2 = sumDenominator;
+            if ( number1.denominator == number2.denominator ) {sumNumerator = number1.numerator + number2.numerator;
+                return document.write( "сумма дробей равна " + sumNumerator + "/" + number1.denominator + "<br>" );}
+            else {
+                sumNumerator = ( number1.numerator * number2.denominator ) + ( number2.numerator * number1.denominator);
+                sumDenominator = number1.denominator * number2.denominator
+                return document.write( "сумма дробей равна " + sumNumerator + "/" + sumDenominator + "<br>" ); 
+            }
+        }
+    //разность 2 дробей
+        function subtraction(){
+            let substrNumerator;
+            let substrDenominator;
+            if ( number1.denominator == number2.denominator ) {substrNumerator = number1.numerator - number2.numerator;
+                return document.write( "разность дробей равна " + substrNumerator + "/" + number1.denominator + "<br>" );}
+            else {
+                substrNumerator = ( number1.numerator * number2.denominator ) - ( number2.numerator * number1.denominator);
+                substrDenominator = number1.denominator * number2.denominator
+                return document.write( "разность дробей равна " + substrNumerator + "/" + substrDenominator + "<br>" ); 
+            }
+
+        }
+    //произведение 2 дробей
+        function multiplication(){
+            let multiNumerator;
+            let multiDenominator;
+            multiNumerator = number1.numerator * number2.numerator;
+            multiDenominator = number1.denominator * number2.denominator;
+                return document.write( "произведение дробей равно " + multiNumerator + "/" + multiDenominator + "<br>" );
+            
+        }
+    //деление 2 дробей
+        function division(){
+            let divisionNumerator;
+            let divisionDenominator;
+            divisionNumerator = number1.numerator * number2.denominator;
+            divisionDenominator = number1.denominator * number2.numerator;
+                return document.write( "частное дробей равно " + divisionNumerator + "/" + divisionDenominator + "<br>" );
+            
+    }
+    let number1 = new Fraction(
+        5,
+        6);
+      
+    
+    let number2 = new Fraction(
+        6,
+        10);
+    
+    number1.fract();    
+    number1.reduction();  
+    number2.fract();
+    number2.reduction();
+    summa();
+    subtraction();
+    multiplication();
+    division();
+    
+</script> -->
+
+<!-- Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом.
+
+1. Функция вывода времени на экран.
+2. Функция изменения времени на переданное количество секунд.
+3. Функция изменения времени на переданное количество минут.
+4. Функция изменения времени на переданное количество часов.
+
+Учтите, что в последних 3-х функциях, при изменении одной части времени, может измениться и другая. Например: если 
+ко времени «20:30:45» добавить 30 секунд, то должно получиться «20:31:15», а не «20:30:75». -->
+
+<!-- <script>
+    const watch = {
+        hour:1,
+        minute:4,
+        second:44,               
+        add_hour:5,
+         add_minute:20,
+         add_second:30
+    }
+    function timeOutput(){
+        console.log(watch.hour + ":" + watch.minute + ":" + watch.second);
+    }
+    function changeSecond(){
+        let second_in_hour = watch.hour * 60 * 60
+        let second_in_minute = watch.minute * 60
+        let second_in_this_time = second_in_hour + second_in_minute + watch.second
+
+        let add_second_in_hour = watch.add_hour * 60 * 60
+        let add_second_in_minute = watch.add_minute * 60
+        let add_second_in_this_time = add_second_in_hour + add_second_in_minute + watch.add_second
+        
+        //вычисляем разницу между датами используя модуль числа( Math.abs ) разности 1 и 2 значений в секундах
+        difference_between_dates = Math.abs(second_in_this_time + add_second_in_this_time) 
+
+        let sec_timeInHourMinutesSecond = difference_between_dates % 60;
+        let min_timeInHourMinutesSecond = ((difference_between_dates - (difference_between_dates % 60)) % 3600)/60;
+        let hour_timeInHourMinutesSecond = Math.floor(difference_between_dates / 3600)
+        console.log("измененное время " + hour_timeInHourMinutesSecond + ":" + min_timeInHourMinutesSecond + ":" + sec_timeInHourMinutesSecond)
+    }
+    timeOutput()
+    changeSecond()
+</script> -->
+</body>
+</html>
